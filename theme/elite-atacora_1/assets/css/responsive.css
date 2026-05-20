@@ -1,0 +1,152 @@
+/* ============================================================
+   ELITE ATACORA — responsive.css  v2.0
+   Breakpoints: 375 · 768 · 1024 · 1400
+   ============================================================ */
+
+/* ≥ 1400px : large desktop */
+@media (min-width: 1400px) {
+  :root { --container: 1320px; }
+}
+
+/* ≤ 1024px : tablet */
+@media (max-width: 1024px) {
+  .hero__inner          { grid-template-columns: 1fr; }
+  .hero__visual         { order: -1; max-width: 28rem; margin-inline: auto; }
+  .hero__badge-impact   { right: 1rem; }
+  .hero__badge-odd      { left: -0.5rem; }
+  .hero__medallion      { right: 1rem; }
+
+  .keyfigures__header   { grid-template-columns: 1fr; gap: 1rem; }
+  .keyfigures__grid     { grid-template-columns: repeat(2, 1fr); }
+
+  .mission-values__inner { grid-template-columns: 1fr; gap: 3rem; }
+
+  .news-grid            { grid-template-columns: repeat(2, 1fr); }
+
+  .events-grid          { grid-template-columns: 1fr; }
+  .event-featured       { grid-template-columns: 1fr; }
+
+  .join-cta__box        { grid-template-columns: 1fr; }
+  .join-cta__left,
+  .join-cta__right      { padding: 2.5rem; }
+
+  .page-hero__inner     { grid-template-columns: 1fr; }
+  .page-hero__image     { order: -1; max-width: 28rem; margin-inline: auto; }
+
+  .bureau-grid          { grid-template-columns: repeat(2, 1fr); }
+  .values-grid-5        { grid-template-columns: repeat(3, 1fr); }
+  .objectifs-grid       { grid-template-columns: repeat(2, 1fr); }
+  .logo-meaning         { grid-template-columns: 1fr; }
+  .logo-meaning__frame  { max-width: 20rem; margin-inline: auto; }
+
+  .domaines-grid        { grid-template-columns: repeat(2, 1fr); }
+  .zones-grid           { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid         { grid-template-columns: repeat(3, 1fr); }
+  .videos-grid          { grid-template-columns: repeat(2, 1fr); }
+
+  .types-grid           { grid-template-columns: 1fr; }
+  .process-grid         { grid-template-columns: repeat(2, 1fr); }
+  .form-split           { grid-template-columns: 1fr; }
+  .form-aside           { padding: 2rem 2.5rem; }
+  .form-main            { padding: 2rem 2.5rem; }
+  .form-type-selector   { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-infos        { grid-template-columns: repeat(2, 1fr); }
+  .map-form-split       { grid-template-columns: 1fr; }
+  .map-form-right       { padding: 2rem 2.5rem; }
+
+  .cta-banner           { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem; }
+  .cta-banner__actions  { justify-content: flex-start; }
+
+  .footer__newsletter   { grid-template-columns: 1fr; }
+  .footer__main         { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  .archive-grid         { grid-template-columns: 1fr; }
+  .sidebar              { position: static; }
+  .organe-grid          { grid-template-columns: 1fr; }
+
+  .mission-vision-grid  { grid-template-columns: 1fr; }
+  .policy-section       { grid-template-columns: 2fr 10fr; }
+}
+
+/* ≤ 768px : mobile */
+@media (max-width: 768px) {
+  :root { --pad-x: 1rem; --s7: 4rem; --s6: 3rem; }
+
+  .burger    { display: grid; }
+  .site-nav  { display: none; }
+  .header__actions .btn-pill { display: none; }
+  .lang-switcher { display: none; }
+
+  .hero__title           { font-size: 3rem; }
+  .hero__credentials     { flex-direction: column; align-items: flex-start; }
+  .hero__cred            { border-right: none; border-bottom: 1px solid rgba(30,24,19,0.08); }
+  .hero__cred:last-child { border-bottom: none; }
+
+  .keyfigures__grid      { grid-template-columns: 1fr 1fr; }
+
+  .news-grid             { grid-template-columns: 1fr; }
+
+  .events-section__deco  { display: none; }
+
+  .join-cta__box         { border-radius: 1.5rem; }
+
+  .page-hero__title      { font-size: 3rem; }
+
+  .organe-grid           { grid-template-columns: 1fr; }
+  .bureau-grid           { grid-template-columns: repeat(2, 1fr); }
+  .values-grid-5         { grid-template-columns: repeat(2, 1fr); }
+  .objectifs-grid        { grid-template-columns: 1fr; }
+
+  .domaines-grid         { grid-template-columns: 1fr; }
+  .gallery-grid          { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 10rem; }
+  .gallery-item:first-child { grid-column: span 1; grid-row: span 1; }
+  .videos-grid           { grid-template-columns: 1fr; }
+  .zones-grid            { grid-template-columns: repeat(2, 1fr); }
+
+  .process-grid          { grid-template-columns: 1fr; }
+  .form-type-selector    { grid-template-columns: repeat(2, 1fr); }
+  .form-row              { grid-template-columns: 1fr; }
+  .pricing-boxes         { grid-template-columns: 1fr; }
+
+  .contact-infos         { grid-template-columns: 1fr 1fr; }
+
+  .footer__newsletter-row { flex-direction: column; }
+  .footer__main           { grid-template-columns: 1fr; }
+
+  .policy-section        { grid-template-columns: 1fr; }
+  .policy-section__num   { font-size: 2rem; }
+
+  .section-header        { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+}
+
+/* ≤ 480px : small mobile */
+@media (max-width: 480px) {
+  .hero__title           { font-size: 2.5rem; }
+  .hero__badge-impact,
+  .hero__medallion,
+  .hero__badge-odd       { display: none; }
+
+  .page-hero__title      { font-size: 2.5rem; }
+
+  .bureau-grid           { grid-template-columns: 1fr; }
+  .values-grid-5         { grid-template-columns: 1fr; }
+
+  .contact-infos         { grid-template-columns: 1fr; }
+
+  .keyfigures__grid      { grid-template-columns: 1fr; }
+}
+
+/* Print */
+@media print {
+  .site-header, .site-footer, .btn, .btn-pill, .burger { display: none !important; }
+  body { background: white; color: black; }
+  .hero__blob-1, .hero__blob-2, .page-hero__blob-1, .page-hero__blob-2 { display: none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .marquee-track { animation: none; }
+  .floaty        { animation: none; }
+}

@@ -1,0 +1,78 @@
+/*
+Theme Name: Elite Atacora
+Theme URI: https://eliteatacora.org
+Author: ONG Elite Atacora
+Author URI: https://eliteatacora.org
+Description: Thème officiel de l'ONG Elite Atacora — organisation non gouvernementale béninoise engagée pour l'éducation et l'autonomisation des femmes et des enfants de l'Atacora.
+Version: 1.0.0
+Requires at least: 6.3
+Tested up to: 6.7
+Requires PHP: 8.1
+License: Proprietary
+License URI: https://eliteatacora.org
+Text Domain: elite-atacora
+Tags: ong, beninois, responsive, accessibility-ready
+*/
+
+/* ──────────────────────────────────────────────────────────────
+   BASE RESET — full styles live in assets/css/main.css
+   (WordPress requires style.css at theme root for theme headers)
+─────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #FAF5EA;
+  color: #1E1813;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid #1E5631;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
