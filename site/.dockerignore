@@ -1,0 +1,21 @@
+# Dépendances & artefacts de build
+node_modules
+.next
+.npm-cache
+*.tsbuildinfo
+
+# Environnement local (secrets)
+.env
+.env.*
+!.env.example
+
+# Git & IDE
+.git
+.gitignore
+.DS_Store
+*.md
+
+# Logs & debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
