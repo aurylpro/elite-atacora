@@ -1,0 +1,26 @@
+# Next.js app — dépendances & artefacts
+site/node_modules
+site/.next
+site/.npm-cache
+site/*.tsbuildinfo
+
+# Environnement local (secrets)
+**/.env
+**/.env.*
+!site/.env.example
+
+# Git & IDE
+.git
+.gitignore
+**/.DS_Store
+
+# Docs & assets non nécessaires au build
+*.md
+Ressources
+_design_ref_v2
+theme
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*

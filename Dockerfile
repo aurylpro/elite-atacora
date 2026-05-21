@@ -1,21 +1,24 @@
-# Ce Dockerfile est conservé pour un build local depuis site/ :
-#   docker build -t elite-atacora-site .
-#
-# Pour Coolify, utiliser le Dockerfile à la racine du dépôt (../Dockerfile)
-# avec Base Directory vide ou "/".
+# =============================================================================
+# Elite Atacora — Next.js (Coolify / Docker)
+# Build context : racine du dépôt (Base Directory vide ou "/")
+# =============================================================================
 
 FROM node:22-alpine AS base
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+# --- Dépendances (cache Docker layer) ----------------------------------------
 FROM base AS deps
-COPY package.json package-lock.json ./
+COPY site/package.json site/package-lock.json ./
 RUN npm ci
 
+# --- Build -------------------------------------------------------------------
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY site/ .
 
+# Variables NEXT_PUBLIC_* : obligatoires au build (inlinées côté client).
+# Dans Coolify : cocher "Available at Buildtime" pour ces variables.
 ARG NEXT_PUBLIC_SANITY_PROJECT_ID
 ARG NEXT_PUBLIC_SANITY_DATASET=production
 ENV NEXT_PUBLIC_SANITY_PROJECT_ID=$NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -24,6 +27,7 @@ ENV NEXT_PUBLIC_SANITY_DATASET=$NEXT_PUBLIC_SANITY_DATASET
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
+# --- Image de production (légère) --------------------------------------------
 FROM base AS runner
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
